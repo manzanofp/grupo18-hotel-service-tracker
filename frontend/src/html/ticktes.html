@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide-icons"></script>
+</head>
+
+<body class="bg-[#1E1E1E] text-gray-900">
+    <div class="relative flex h-screen">
+        <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden  focus:outline-none focus:ring-0" aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Abrir menu principal</span>
+            <svg id="hamburger-icon" class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        <aside id="navbar-default" class="w-64 bg-[#2E2E2E] border-r border-[#4C4C4C] p-4 hidden md:block md:relative absolute  top-0 left-0 h-full z-10">
+            <nav>
+                <ul class="space-y-4">
+                    <li id="logo" class="text-xl font-semibold text-gray-900 dark:text-white">Icon</li>
+                    <li id="app-name" class="text-lg font-semibold text-gray-900 dark:text-white">Hotel Service Tracker</li>
+
+                    <!-- Dashboard -->
+                    <li class="border-t border-[#4C4C4C] pt-4">
+                        <a href="index.html" class="menu-link text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 p-2 rounded flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard mr-2">
+                                <rect width="7" height="9" x="3" y="3" rx="1"/>
+                                <rect width="7" height="5" x="14" y="3" rx="1"/>
+                                <rect width="7" height="9" x="14" y="12" rx="1"/>
+                                <rect width="7" height="5" x="3" y="16" rx="1"/>
+                            </svg>
+                            Dashboard
+                        </a>
+                    </li>
+                    
+
+                    <!-- Tickets -->
+                    <li>
+                        <a href="ticktes.html" class="menu-link text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 p-2 rounded flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ticket mr-2">
+                                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
+                                <path d="M13 5v2"/>
+                                <path d="M13 17v2"/>
+                                <path d="M13 11v2"/>
+                            </svg>
+                            Tickets
+                        </a>
+                    </li>
+
+                    <li class="border-t border-[#4C4C4C] pt-4">
+                        <a href="login.html" class="menu-link text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 p-2 rounded flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out mr-2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                                <polyline points="16 17 21 12 16 7"/>
+                                <line x1="21" x2="9" y1="12" y2="12"/>
+                            </svg>
+                            Sair
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </aside>
+
+        <main id="content" class="flex-1 p-6 overflow-auto transition-all duration-300">
+            <div class="border border-[#4C4C4C] bg-[#2E2E2E] h-auto rounded-md p-5">
+                <h1 class="text-[#179E6B] mb-4 text-xl">Tickets </h1>
+
+                <div class="relative overflow-x-auto rounded-lg">
+                    <table class="w-full text-sm text-left rtl:text-center text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-white font-normal uppercase bg-[#4C4C4C] border-t border-b border-[#4C4C4C]">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Nome
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Solicitação
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Aberto em
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Responsável
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Observação
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-transparent border-l border-r border-b border-[#4C4C4C]">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="px-6 py-4">
+                                    Silver
+                                </td>
+                                <td class="px-6 py-4">
+                                    Laptop
+                                </td>
+                                <td class="px-6 py-4">
+                                    $2999
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Ver</a>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="px-3 py-1 text-sm font-normal rounded-full bg-[#FDE8E8] text-[#9B1C1C]">Pendente</span>
+                                </td>
+                            </tr>
+                            <tr class="bg-transparent border-l border-r border-b border-[#4C4C4C]">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Microsoft Surface Pro
+                                </th>
+                                <td class="px-6 py-4">
+                                    White
+                                </td>
+                                <td class="px-6 py-4">
+                                    Laptop PC
+                                </td>
+                                <td class="px-6 py-4">
+                                    $1999
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Ver</a>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="px-4 py-1 text-sm font-normal rounded-full bg-[#DEF7EC] text-[#03543F]">Finalizado</span>
+                                </td>
+                            </tr>
+                            <tr class="bg-[#2E2E2E] border-l border-r border-b border-[#4C4C4C]">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Magic Mouse 2
+                                </th>
+                                <td class="px-6 py-4">
+                                    Black
+                                </td>
+                                <td class="px-6 py-4">
+                                    Accessories
+                                </td>
+                                <td class="px-6 py-4">
+                                    $99
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Ver</a>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="px-3 py-1 text-sm font-normal rounded-full bg-[#FDE8E8] text-[#9B1C1C]">Pendente</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4"> 
+                    <nav aria-label="Page navigation">
+                        <ul class="flex items-center -space-x-px h-10 text-sm">
+                          <li>
+                            <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-white bg-[#2E2E2E] border border-e-0 border-[#4C4C4C] rounded-s-lg">
+                              <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                              </svg>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-white bg-[#2E2E2E] border border-[#4C4C4C] ">1</a>
+                          </li>
+                          <li>
+                            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-white bg-[#2E2E2E] border border-[#4C4C4C] ">2</a>
+                          </li>
+                          <li>
+                            <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-white border border-[#4C4C4C] bg-[#2E2E2E]">3</a>
+                          </li>
+                          <li>
+                            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-white bg-[#2E2E2E] border border-[#4C4C4C] ">4</a>
+                          </li>
+                          <li>
+                            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-white bg-[#2E2E2E] border border-[#4C4C4C] rounded-e-lg">
+                              <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                              </svg>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Seleciona o botão de toggle e o menu
+        const menuToggle = document.getElementById("menu-toggle");
+        const navbarMenu = document.getElementById("navbar-default");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+    
+        // Função que alterna a visibilidade do menu no mobile
+        menuToggle.addEventListener("click", (event) => {
+            const isOpen = navbarMenu.classList.contains("hidden");
+            if (isOpen) {
+                navbarMenu.classList.remove("hidden");
+                navbarMenu.classList.add("block"); // Exibe o menu
+                hamburgerIcon.innerHTML = `
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                `; // Ícone de "fechar" o menu
+            } else {
+                navbarMenu.classList.add("hidden");
+                navbarMenu.classList.remove("block"); // Esconde o menu
+                hamburgerIcon.innerHTML = `
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                `; // Restaura o ícone de "hamburger"
+            }
+        });
+    
+        // Fechar o menu ao clicar fora dele
+        document.addEventListener("click", (event) => {
+            if (!navbarMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbarMenu.classList.add("hidden"); // Adiciona a classe "hidden" para esconder o menu
+                navbarMenu.classList.remove("block"); // Remove a classe "block" se estiver visível
+                hamburgerIcon.innerHTML = `
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                `; // Restaura o ícone de menu "hamburger"
+            }
+        });
+    </script>
+    
+
+</body>
+
+</html>

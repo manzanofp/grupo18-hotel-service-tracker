@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Selecione</title>
+</head>
+
+<body class="bg-[#1E1E1E] flex items-center justify-center h-screen">
+
+    <div class="custom-select-container w-full max-w-md bg-[#2E2E2E] p-6 rounded-lg shadow-lg">
+
+        <div class="title mb-6 text-center">
+            <h1 class="text-2xl font-semibold text-white">Você é</h1>
+        </div>
+
+
+        <div class="custom-select relative">
+            <div class="select-header bg-[#4C4C4C] flex items-center justify-between border border-[#767676] rounded-full p-3 cursor-pointer">
+                <span class="btn-toggle text-[#CACACA]">&#9662;</span>
+                <span class="select-placeholder text-[#CACACA]">Selecione a opção</span>
+                <div class="">
+                    <span class="btn-close text-[#CACACA]">&times;</span>
+                </div>
+            </div>
+
+            <ul class="select-options hidden absolute w-full bg-[#4C4C4C] border border-[#767676] rounded-lg shadow-lg mt-1">
+                <li class="py-2 px-4 text-[#CACACA] cursor-pointer border-b border-b-[#767676]">Colaborador</li>
+                <li class="py-2 px-4 text-[#CACACA] cursor-pointer ">Hóspede</li>
+            </ul>
+        </div>
+        <div class="text-center mt-6">
+            <button class="btn-enter w-full bg-[#179E6B] text-[#0D0D0D] py-2 px-4 rounded-lg">Entrar</button>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

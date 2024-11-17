@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login da Plataforma</title>
+</head>
+
+<body class="bg-[#1E1E1E] flex items-center justify-center min-h-screen">
+
+    <div class="login-container w-full max-w-sm bg-[#2E2E2E] p-8 rounded-lg shadow-lg">
+        <h1 class="login-title text-xl font-normal text-white mb-6">Login da Plataforma</h1>
+
+        <form id="loginForm" class="login-form space-y-6">
+            <div class="form-group">
+                <label for="email" class="form-label block text-white text-sm font-medium">Seu e-mail:</label>
+                <input type="email" id="email" name="email" class="form-input mt-2 block w-full px-4 py-2 border bg-[#4C4C4C] border-[#767676] rounded-lg focus:outline-none focus:ring-0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="senha" class="form-label block text-white text-sm font-medium">Senha:</label>
+                <input type="password" id="senha" name="senha" class="form-input mt-2 block w-full px-4 py-2 border bg-[#4C4C4C] border-[#767676] rounded-lg focus:outline-none focus:ring-0" required>
+            </div>
+
+            <button type="submit" class="btn-submit w-full py-2 px-4 bg-[#179E6B] text-[#0D0D0D] font-normal rounded-lg focus:outline-none focus:ring-0">
+                Entrar
+            </button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            // Obter os valores dos campos
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value.trim();
+
+            // Validar se os campos estão preenchidos
+            if (email && senha) {
+                // Redirecionar para a página index.html
+                window.location.href = "index.html";
+            } else {
+                // Exibir alerta se os campos não estiverem preenchidos
+                alert('Por favor, preencha todos os campos antes de continuar.');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
