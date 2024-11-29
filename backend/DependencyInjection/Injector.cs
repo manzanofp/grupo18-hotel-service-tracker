@@ -1,11 +1,9 @@
 ﻿using Application.Interfaces;
-using Application.Repositories;
 using Application.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Context;
-using Persistence.Repositories;
 
 namespace DependencyInjection;
 

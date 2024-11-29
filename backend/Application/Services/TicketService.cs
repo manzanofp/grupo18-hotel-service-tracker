@@ -9,6 +9,25 @@ public class TicketService : ITicketService
 {
     private readonly ITicketRepository _ticketRepository;
 
+    public async Task<string> DeleteTicketAsync(long ticketId)
+    {
+        try
+        {
+            var ticket = await _ticketRepository.SelectAsync(ticketId);
+
+            if (ticket == null)
+                throw new Exception("Ticket not found");
+
+            await _ticketRepository.DeleteAsync(ticket);
+
+            return "Ticket deleted successfully";
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
     public async Task<ICollection<TicketEntity>> GetAllTickets()
     {
         try
