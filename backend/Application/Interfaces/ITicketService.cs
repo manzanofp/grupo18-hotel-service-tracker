@@ -8,4 +8,5 @@ public interface ITicketService
     Task<TicketEntity> GuestCreateTicketAsync(TicketRequest request);
     Task<TicketEntity> UpdateTicketAsync(long ticketId, TicketEntity ticketEntity);
     Task<ICollection<TicketEntity>> GetAllTickets();
+    Task<string> DeleteTicketAsync(long ticketId);
 }
